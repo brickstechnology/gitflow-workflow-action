@@ -56507,7 +56507,7 @@ module.exports = axios;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@slack/web-api","version":"6.11.0","description":"Official library for using the Slack Platform\'s Web API","author":"Slack Technologies, LLC","license":"MIT","keywords":["slack","web-api","bot","client","http","api","proxy","rate-limiting","pagination"],"main":"dist/index.js","types":"./dist/index.d.ts","files":["dist/**/*"],"engines":{"node":">= 12.13.0","npm":">= 6.12.0"},"repository":"slackapi/node-slack-sdk","homepage":"https://slack.dev/node-slack-sdk/web-api","publishConfig":{"access":"public"},"bugs":{"url":"https://github.com/slackapi/node-slack-sdk/issues"},"scripts":{"prepare":"npm run build","build":"npm run build:clean && tsc","build:clean":"shx rm -rf ./dist ./coverage ./.nyc_output","lint":"eslint --ext .ts src","test":"npm run lint && npm run build && npm run test:mocha && npm run test:types","test:mocha":"nyc mocha --config .mocharc.json src/*.spec.js","test:types":"tsd","coverage":"codecov -F webapi --root=$PWD","ref-docs:model":"api-extractor run","watch":"npx nodemon --watch \'src\' --ext \'ts\' --exec npm run build","build:deno":"esbuild --bundle --define:process.cwd=String --define:process.version=\'\\"v1.15.2\\"\' --define:process.title=\'\\"deno\\"\' --define:Buffer=dummy_buffer --inject:./deno-shims/buffer-shim.js --inject:./deno-shims/xhr-shim.js --target=esnext --format=esm --outfile=./mod.js src/index.ts"},"dependencies":{"@slack/logger":"^3.0.0","@slack/types":"^2.11.0","@types/is-stream":"^1.1.0","@types/node":">=12.0.0","axios":"^1.6.0","eventemitter3":"^3.1.0","form-data":"^2.5.0","is-electron":"2.2.2","is-stream":"^1.1.0","p-queue":"^6.6.1","p-retry":"^4.0.0"},"devDependencies":{"@aoberoi/capture-console":"^1.1.0","@microsoft/api-extractor":"^7.3.4","@types/chai":"^4.1.7","@types/mocha":"^5.2.6","@typescript-eslint/eslint-plugin":"^4.4.1","@typescript-eslint/parser":"^4.4.0","busboy":"^1.6.0","chai":"^4.2.0","codecov":"^3.2.0","esbuild":"^0.13.15","eslint":"^7.32.0","eslint-config-airbnb-base":"^14.2.1","eslint-config-airbnb-typescript":"^12.3.1","eslint-plugin-import":"^2.22.1","eslint-plugin-jsdoc":"^30.6.1","eslint-plugin-node":"^11.1.0","mocha":"^9.1.0","nock":"^13.2.6","nyc":"^15.1.0","shelljs":"^0.8.3","shx":"^0.3.2","sinon":"^7.2.7","source-map-support":"^0.5.10","ts-node":"^10.8.1","tsd":"0.29.0","typescript":"^4.1"},"tsd":{"directory":"test/types"}}');
+module.exports = JSON.parse('{"_args":[["@slack/web-api@6.11.0","/Users/karnj/work/bricks/gitflow-workflow-action"]],"_from":"@slack/web-api@6.11.0","_id":"@slack/web-api@6.11.0","_inBundle":false,"_integrity":"sha512-DLShYUc2dE8QrhmrJZ7YuhAuh/VW88Dt3LL7s2KrkEOyxbdfjAtF9bzPOBMlXuWmO6nWLGVevPuhShcYyjwTEw==","_location":"/@slack/web-api","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"@slack/web-api@6.11.0","name":"@slack/web-api","escapedName":"@slack%2fweb-api","scope":"@slack","rawSpec":"6.11.0","saveSpec":null,"fetchSpec":"6.11.0"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/@slack/web-api/-/web-api-6.11.0.tgz","_spec":"6.11.0","_where":"/Users/karnj/work/bricks/gitflow-workflow-action","author":{"name":"Slack Technologies, LLC"},"bugs":{"url":"https://github.com/slackapi/node-slack-sdk/issues"},"dependencies":{"@slack/logger":"^3.0.0","@slack/types":"^2.11.0","@types/is-stream":"^1.1.0","@types/node":">=12.0.0","axios":"^1.6.0","eventemitter3":"^3.1.0","form-data":"^2.5.0","is-electron":"2.2.2","is-stream":"^1.1.0","p-queue":"^6.6.1","p-retry":"^4.0.0"},"description":"Official library for using the Slack Platform\'s Web API","devDependencies":{"@aoberoi/capture-console":"^1.1.0","@microsoft/api-extractor":"^7.3.4","@types/chai":"^4.1.7","@types/mocha":"^5.2.6","@typescript-eslint/eslint-plugin":"^4.4.1","@typescript-eslint/parser":"^4.4.0","busboy":"^1.6.0","chai":"^4.2.0","codecov":"^3.2.0","esbuild":"^0.13.15","eslint":"^7.32.0","eslint-config-airbnb-base":"^14.2.1","eslint-config-airbnb-typescript":"^12.3.1","eslint-plugin-import":"^2.22.1","eslint-plugin-jsdoc":"^30.6.1","eslint-plugin-node":"^11.1.0","mocha":"^9.1.0","nock":"^13.2.6","nyc":"^15.1.0","shelljs":"^0.8.3","shx":"^0.3.2","sinon":"^7.2.7","source-map-support":"^0.5.10","ts-node":"^10.8.1","tsd":"0.29.0","typescript":"^4.1"},"engines":{"node":">= 12.13.0","npm":">= 6.12.0"},"files":["dist/**/*"],"homepage":"https://slack.dev/node-slack-sdk/web-api","keywords":["slack","web-api","bot","client","http","api","proxy","rate-limiting","pagination"],"license":"MIT","main":"dist/index.js","name":"@slack/web-api","publishConfig":{"access":"public"},"repository":{"type":"git","url":"git+https://github.com/slackapi/node-slack-sdk.git"},"scripts":{"build":"npm run build:clean && tsc","build:clean":"shx rm -rf ./dist ./coverage ./.nyc_output","build:deno":"esbuild --bundle --define:process.cwd=String --define:process.version=\'\\"v1.15.2\\"\' --define:process.title=\'\\"deno\\"\' --define:Buffer=dummy_buffer --inject:./deno-shims/buffer-shim.js --inject:./deno-shims/xhr-shim.js --target=esnext --format=esm --outfile=./mod.js src/index.ts","coverage":"codecov -F webapi --root=$PWD","lint":"eslint --ext .ts src","prepare":"npm run build","ref-docs:model":"api-extractor run","test":"npm run lint && npm run build && npm run test:mocha && npm run test:types","test:mocha":"nyc mocha --config .mocharc.json src/*.spec.js","test:types":"tsd","watch":"npx nodemon --watch \'src\' --ext \'ts\' --exec npm run build"},"tsd":{"directory":"test/types"},"types":"./dist/index.d.ts","version":"6.11.0"}');
 
 /***/ }),
 
@@ -56655,6 +56655,8 @@ const Config = {
     core.getInput("release_summary") || process.env.RELEASE_SUMMARY || "",
   releaseBranchPrefix: "release/",
   hotfixBranchPrefix: "hotfix/",
+  versionPrefix:
+    core.getInput("version_prefix") || process.env.VERSION_PREFIX || "",
 };
 
 ;// CONCATENATED MODULE: ./src/constants.js
@@ -56676,7 +56678,7 @@ See [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflo
  */
 async function tryMerge(headBranch, baseBranch) {
   console.log(
-    `Trying to merge ${headBranch} branch into ${baseBranch} branch.`,
+    `Trying to merge ${headBranch} branch into ${baseBranch} branch.`
   );
 
   const { data: compareCommitsResult } =
@@ -56688,7 +56690,7 @@ async function tryMerge(headBranch, baseBranch) {
 
   if (compareCommitsResult.status !== "identical") {
     console.log(
-      `${headBranch} branch is not up to date with ${baseBranch} branch. Attempting to merge.`,
+      `${headBranch} branch is not up to date with ${baseBranch} branch. Attempting to merge.`
     );
     try {
       await octokit.rest.repos.merge({
@@ -56713,7 +56715,7 @@ See [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflo
     }
   } else {
     console.log(
-      `${headBranch} branch is already up to date with ${baseBranch} branch.`,
+      `${headBranch} branch is already up to date with ${baseBranch} branch.`
     );
   }
 }
@@ -56726,7 +56728,7 @@ function isReleaseCandidate(pullRequest, shouldLog = false) {
   if (pullRequest.base.ref !== Config.prodBranch) {
     if (shouldLog)
       console.log(
-        `on-release: ${pullRequest.number} does not merge to main_branch. Exiting...`,
+        `on-release: ${pullRequest.number} does not merge to main_branch. Exiting...`
       );
     return false;
   }
@@ -56741,7 +56743,7 @@ function isReleaseCandidate(pullRequest, shouldLog = false) {
 
   if (shouldLog)
     console.log(
-      `on-release: pull request does not match either release or hotfix branch pattern. Exiting...`,
+      `on-release: pull request does not match either release or hotfix branch pattern. Exiting...`
     );
   return false;
 }
@@ -56756,12 +56758,12 @@ async function createExplainComment(pullRequestNumber) {
   });
 
   const existingExplainComment = existingComments.data.find(
-    (comment) => comment.body === PR_EXPLAIN_MESSAGE,
+    (comment) => comment.body === PR_EXPLAIN_MESSAGE
   );
 
   if (existingExplainComment) {
     console.log(
-      `on-release: pull request ${pullRequestNumber} already has an explain comment.`,
+      `on-release: pull request ${pullRequestNumber} already has an explain comment.`
     );
     return;
   }
@@ -56869,7 +56871,7 @@ async function executeOnRelease() {
   const pullRequestNumber = github.context.payload.pull_request?.number;
   external_assert_default()(
     pullRequestNumber,
-    `github.context.payload.pull_request?.number is not defined`,
+    `github.context.payload.pull_request?.number is not defined`
   );
 
   const { data: pullRequest } = await octokit.rest.pulls.get({
@@ -56901,14 +56903,14 @@ async function executeOnRelease() {
       : new Date();
     version = `hotfix-${now.getFullYear()}${String(now.getMonth() + 1).padStart(
       2,
-      "0",
+      "0"
     )}${String(now.getDate()).padStart(2, "0")}${String(
-      now.getHours(),
+      now.getHours()
     ).padStart(2, "0")}${String(now.getMinutes()).padStart(2, "0")}`;
   }
 
   console.log(
-    `on-release: ${releaseCandidateType}(${version}): Generating release`,
+    `on-release: ${releaseCandidateType}(${version}): Generating release`
   );
 
   const pullRequestBody = pullRequest.body;
@@ -56927,12 +56929,12 @@ async function executeOnRelease() {
    * Merging the release or hotfix branch back to the develop branch if needed
    */
   console.log(
-    `on-release: ${releaseCandidateType}(${version}): Execute merge workflow`,
+    `on-release: ${releaseCandidateType}(${version}): Execute merge workflow`
   );
 
   await tryMerge(
     Config.mergeBackFromProd ? Config.prodBranch : currentBranch,
-    Config.developBranch,
+    Config.developBranch
   );
 
   console.log(`on-release: success`);
@@ -56980,7 +56982,7 @@ async function createReleasePR() {
   ).data.commit.sha;
 
   console.log(
-    `create_release: Generating release notes for ${developBranchSha}`,
+    `create_release: Generating release notes for ${developBranchSha}`
   );
 
   // developBranch and mainBranch are almost identical
@@ -56997,17 +56999,23 @@ async function createReleasePR() {
   if (Config.version) {
     version = Config.version;
   } else if (Config.versionIncrement) {
+    // Strip prefix from previous version before incrementing
+    const previousVersion = latest_release_tag_name
+      ? latest_release_tag_name.replace(Config.versionPrefix || "", "")
+      : "0.0.0";
+
     const increasedVersion = inc_default()(
-      latest_release_tag_name || "0.0.0",
+      previousVersion,
       Config.versionIncrement,
-      { loose: true },
+      { loose: true }
     );
     if (!increasedVersion) {
       throw new Error(
-        `create_release: Could not increment version ${latest_release_tag_name} with ${Config.versionIncrement}`,
+        `create_release: Could not increment version ${latest_release_tag_name} with ${Config.versionIncrement}`
       );
     }
-    version = increasedVersion;
+    // Add prefix to new version
+    version = `${Config.versionPrefix || ""}${increasedVersion}`;
   } else {
     version = developBranchSha;
   }
@@ -57061,17 +57069,17 @@ ${Config.releaseSummary}
     await createExplainComment(pullRequest.number);
 
     console.log(
-      `create_release: Pull request has been created at ${pullRequest.html_url}`,
+      `create_release: Pull request has been created at ${pullRequest.html_url}`
     );
   } else {
     console.log(
-      `create_release: Dry run: would have created release branch ${releaseBranch} and PR with body:\n${releasePrBody}`,
+      `create_release: Dry run: would have created release branch ${releaseBranch} and PR with body:\n${releasePrBody}`
     );
   }
 
   // Parse the PR body for PR numbers
   let mergedPrNumbers = (releaseNotes.body.match(/pull\/\d+/g) || []).map(
-    (prNumber) => Number(prNumber.replace("pull/", "")),
+    (prNumber) => Number(prNumber.replace("pull/", ""))
   );
   // remove duplicates due to the "New contributors" section
   mergedPrNumbers = Array.from(new Set(mergedPrNumbers)).sort();
