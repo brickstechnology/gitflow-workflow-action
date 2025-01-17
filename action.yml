@@ -31,6 +31,10 @@ inputs:
     description: Specify the release summary to be put in the last section of the release
     required: false
     default: ""
+  version_prefix:
+    description: Specify the version prefix to be put in the version
+    required: false
+    default: ""
 
 runs:
   using: "node16"

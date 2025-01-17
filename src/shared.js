@@ -28,4 +28,6 @@ export const Config = {
     core.getInput("release_summary") || process.env.RELEASE_SUMMARY || "",
   releaseBranchPrefix: "release/",
   hotfixBranchPrefix: "hotfix/",
+  versionPrefix:
+    core.getInput("version_prefix") || process.env.VERSION_PREFIX || "",
 };

@@ -31,7 +31,7 @@ async function executeOnRelease() {
   const pullRequestNumber = github.context.payload.pull_request?.number;
   assert(
     pullRequestNumber,
-    `github.context.payload.pull_request?.number is not defined`,
+    `github.context.payload.pull_request?.number is not defined`
   );
 
   const { data: pullRequest } = await octokit.rest.pulls.get({
@@ -63,14 +63,14 @@ async function executeOnRelease() {
       : new Date();
     version = `hotfix-${now.getFullYear()}${String(now.getMonth() + 1).padStart(
       2,
-      "0",
+      "0"
     )}${String(now.getDate()).padStart(2, "0")}${String(
-      now.getHours(),
+      now.getHours()
     ).padStart(2, "0")}${String(now.getMinutes()).padStart(2, "0")}`;
   }
 
   console.log(
-    `on-release: ${releaseCandidateType}(${version}): Generating release`,
+    `on-release: ${releaseCandidateType}(${version}): Generating release`
   );
 
   const pullRequestBody = pullRequest.body;
@@ -89,12 +89,12 @@ async function executeOnRelease() {
    * Merging the release or hotfix branch back to the develop branch if needed
    */
   console.log(
-    `on-release: ${releaseCandidateType}(${version}): Execute merge workflow`,
+    `on-release: ${releaseCandidateType}(${version}): Execute merge workflow`
   );
 
   await tryMerge(
     Config.mergeBackFromProd ? Config.prodBranch : currentBranch,
-    Config.developBranch,
+    Config.developBranch
   );
 
   console.log(`on-release: success`);

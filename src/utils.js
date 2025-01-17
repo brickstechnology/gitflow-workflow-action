@@ -8,7 +8,7 @@ import { Config, octokit } from "./shared.js";
  */
 export async function tryMerge(headBranch, baseBranch) {
   console.log(
-    `Trying to merge ${headBranch} branch into ${baseBranch} branch.`,
+    `Trying to merge ${headBranch} branch into ${baseBranch} branch.`
   );
 
   const { data: compareCommitsResult } =
@@ -20,7 +20,7 @@ export async function tryMerge(headBranch, baseBranch) {
 
   if (compareCommitsResult.status !== "identical") {
     console.log(
-      `${headBranch} branch is not up to date with ${baseBranch} branch. Attempting to merge.`,
+      `${headBranch} branch is not up to date with ${baseBranch} branch. Attempting to merge.`
     );
     try {
       await octokit.rest.repos.merge({
@@ -46,7 +46,7 @@ See [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflo
     }
   } else {
     console.log(
-      `${headBranch} branch is already up to date with ${baseBranch} branch.`,
+      `${headBranch} branch is already up to date with ${baseBranch} branch.`
     );
   }
 }
@@ -59,7 +59,7 @@ export function isReleaseCandidate(pullRequest, shouldLog = false) {
   if (pullRequest.base.ref !== Config.prodBranch) {
     if (shouldLog)
       console.log(
-        `on-release: ${pullRequest.number} does not merge to main_branch. Exiting...`,
+        `on-release: ${pullRequest.number} does not merge to main_branch. Exiting...`
       );
     return false;
   }
@@ -74,7 +74,7 @@ export function isReleaseCandidate(pullRequest, shouldLog = false) {
 
   if (shouldLog)
     console.log(
-      `on-release: pull request does not match either release or hotfix branch pattern. Exiting...`,
+      `on-release: pull request does not match either release or hotfix branch pattern. Exiting...`
     );
   return false;
 }
@@ -89,12 +89,12 @@ export async function createExplainComment(pullRequestNumber) {
   });
 
   const existingExplainComment = existingComments.data.find(
-    (comment) => comment.body === PR_EXPLAIN_MESSAGE,
+    (comment) => comment.body === PR_EXPLAIN_MESSAGE
   );
 
   if (existingExplainComment) {
     console.log(
-      `on-release: pull request ${pullRequestNumber} already has an explain comment.`,
+      `on-release: pull request ${pullRequestNumber} already has an explain comment.`
     );
     return;
   }

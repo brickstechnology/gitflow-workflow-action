@@ -17,7 +17,7 @@ export async function createReleasePR() {
   ).data.commit.sha;
 
   console.log(
-    `create_release: Generating release notes for ${developBranchSha}`,
+    `create_release: Generating release notes for ${developBranchSha}`
   );
 
   // developBranch and mainBranch are almost identical
@@ -35,17 +35,23 @@ export async function createReleasePR() {
   if (Config.version) {
     version = Config.version;
   } else if (Config.versionIncrement) {
+    // Strip prefix from previous version before incrementing
+    const previousVersion = latest_release_tag_name
+      ? latest_release_tag_name.replace(Config.versionPrefix || "", "")
+      : "0.0.0";
+
     const increasedVersion = semverInc(
-      latest_release_tag_name || "0.0.0",
+      previousVersion,
       Config.versionIncrement,
-      { loose: true },
+      { loose: true }
     );
     if (!increasedVersion) {
       throw new Error(
-        `create_release: Could not increment version ${latest_release_tag_name} with ${Config.versionIncrement}`,
+        `create_release: Could not increment version ${latest_release_tag_name} with ${Config.versionIncrement}`
       );
     }
-    version = increasedVersion;
+    // Add prefix to new version
+    version = `${Config.versionPrefix || ""}${increasedVersion}`;
   } else {
     version = developBranchSha;
   }
@@ -99,17 +105,17 @@ ${Config.releaseSummary}
     await createExplainComment(pullRequest.number);
 
     console.log(
-      `create_release: Pull request has been created at ${pullRequest.html_url}`,
+      `create_release: Pull request has been created at ${pullRequest.html_url}`
     );
   } else {
     console.log(
-      `create_release: Dry run: would have created release branch ${releaseBranch} and PR with body:\n${releasePrBody}`,
+      `create_release: Dry run: would have created release branch ${releaseBranch} and PR with body:\n${releasePrBody}`
     );
   }
 
   // Parse the PR body for PR numbers
   let mergedPrNumbers = (releaseNotes.body.match(/pull\/\d+/g) || []).map(
-    (prNumber) => Number(prNumber.replace("pull/", "")),
+    (prNumber) => Number(prNumber.replace("pull/", ""))
   );
   // remove duplicates due to the "New contributors" section
   mergedPrNumbers = Array.from(new Set(mergedPrNumbers)).sort();
