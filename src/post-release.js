@@ -97,6 +97,44 @@ async function executeOnRelease() {
     Config.developBranch
   );
 
+  /**
+   * Merging the release or hotfix branch back to the latest release branch if exists
+   */
+  console.log(
+    `on-release: ${releaseCandidateType}(${version}): Find latest release branch`
+  );
+
+  // Find all release branches
+  const { data: branches } = await octokit.rest.repos.listBranches({
+    ...Config.repo,
+  });
+
+  // Filter release branches and sort them to find the latest one
+  const releaseBranches = branches
+    .map((branch) => branch.name)
+    .filter(
+      (branchName) =>
+        branchName.startsWith(Config.releaseBranchPrefix) &&
+        branchName !== currentBranch
+    );
+
+  if (releaseBranches.length > 0) {
+    // Sort release branches (assuming semantic versioning or chronological ordering)
+    releaseBranches.sort();
+    const latestReleaseBranch = releaseBranches[releaseBranches.length - 1];
+
+    console.log(
+      `on-release: ${releaseCandidateType}(${version}): Merging to latest release branch ${latestReleaseBranch}`
+    );
+
+    await tryMerge(
+      Config.mergeBackFromProd ? Config.prodBranch : currentBranch,
+      latestReleaseBranch
+    );
+  } else {
+    console.log(`on-release: No other release branches found to merge to`);
+  }
+
   console.log(`on-release: success`);
 
   console.log(`post-release: process release ${release.name}`);
