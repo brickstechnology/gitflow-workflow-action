@@ -54,6 +54,9 @@
     "js-yaml": "4.3.2",
     "micromatch": "4.0.8",
     "minimatch": "3.1.4",
-    "picomatch": "2.3.2"
+    "picomatch": "2.3.2",
+    "@fastify/busboy": "3.2.2",
+    "undici": "6.29.1",
+    "uuid": "11.1.1"
   }
 }
